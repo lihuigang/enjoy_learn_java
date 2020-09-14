@@ -13,8 +13,6 @@
 
     <modules>
         <module>springboot-web-vip-2</module>
-        <module>vip-v2-concurrent/concurrent</module>
-        <module>vip-v2-concurrent/deadlock</module>
-        <module>vip-v2-concurrent/TaskFramework</module>
+        <module>concurrent</module>
     </modules>
 </project>
