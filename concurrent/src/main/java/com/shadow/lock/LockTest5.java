@@ -15,11 +15,14 @@ public class LockTest5 {
 
         Thread t1 = new Thread(() -> {
             log.debug("t1启动---------");
-
-                if (!lock.tryLock()) {//进入if标识拿不到锁
+            try {
+                if (!lock.tryLock(5,TimeUnit.SECONDS)) {//进入if标识拿不到锁
                     log.debug("拿不到鎖，返回");
                     return;
                 }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             try {
                 log.debug("获得了锁");

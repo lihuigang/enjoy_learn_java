@@ -71,7 +71,7 @@ public class LockTest6 {
 
                 isPrettyGril=true;
                 log.debug("桥老师");
-                //waitpg.signal();
+                waitpg.signal();
                 waitm.signalAll();
 
             }finally {
