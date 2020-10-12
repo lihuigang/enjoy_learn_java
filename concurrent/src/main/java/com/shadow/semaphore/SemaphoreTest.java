@@ -13,7 +13,7 @@ public class SemaphoreTest {
     public static void main(String[] args) {
 
         //每次访问的线程上限是3
-        Semaphore semaphore = new Semaphore(3);
+        Semaphore semaphore = new Semaphore(15);
 
         for (int i = 0; i < 15; i++) {
             new Thread(() -> {

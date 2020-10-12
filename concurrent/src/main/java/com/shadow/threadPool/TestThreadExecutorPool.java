@@ -17,15 +17,14 @@ public class TestThreadExecutorPool {
 
         //懒惰性---不会再一开始就创建线程，他是有任务提交的时候才会创建线程
         ThreadPoolExecutor threadPoolExecutor
-                = new ThreadPoolExecutor(1,2,
+                = new ThreadPoolExecutor(10,20,
                 3, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(1),
                 (r)->{
                     return  new Thread(r,"t"+atomicInteger.incrementAndGet());
                 },new ThreadPoolExecutor.AbortPolicy());
-
-
-        for (int i = 0; i <2 ; i++) {
+        for (int i = 0; i <20 ; i++) {
+            log.debug("i="+i);
             threadPoolExecutor.execute(new MyTask(i));
         };
 
